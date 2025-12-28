@@ -32,9 +32,7 @@ public:
     }
 
     void printInfo() {
-        cout << "ID: " << id
-             << " - Ten: " << name
-             << " - Luong: " << salary << endl;
+        cout << "ID: " << id << " - Ten: " << name << " - Luong: " << salary << endl;
     }
 
     int getId() {
@@ -45,6 +43,7 @@ public:
         this->salary = salary;
     }
 };
+
 
 class EmployeeManager {
 private:
@@ -58,7 +57,6 @@ public:
 
     void addEmployee() {
         cout << "\n--- THEM NHAN VIEN ---\n";
-
 
         Employee e(nextId, "", 0);
         e.input();
@@ -112,42 +110,3 @@ public:
                 cout << "=> Xoa thanh cong!\n";
                 return;
             }
-        }
-        cout << "=> Khong tim thay nhan vien!\n";
-    }
-
-    void menu() {
-        while (true) {
-            cout << "\n----- MENU -----\n";
-            cout << "1. Them nhan vien\n";
-            cout << "2. Hien thi danh sach\n";
-            cout << "3. Cap nhat luong\n";
-            cout << "4. Xoa nhan vien\n";
-            cout << "5. Thoat\n";
-            cout << "----------------\n";
-            cout << "Chon chuc nang: ";
-
-            int choice;
-            cin >> choice;
-
-            switch (choice) {
-                case 1: addEmployee(); break;
-                case 2: showAll(); break;
-                case 3: updateSalaryById(); break;
-                case 4: deleteById(); break;
-                case 5:
-                    cout << "Bye!\n";
-                    return;
-                default:
-                    cout << "Lua chon khong hop le! Moi chon lai.\n";
-            }
-        }
-    }
-};
-
-int main() {
-    EmployeeManager manager;
-    manager.menu();
-    return 0;
-}
-
