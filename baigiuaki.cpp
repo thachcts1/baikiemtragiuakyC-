@@ -44,7 +44,6 @@ public:
     }
 };
 
-
 class EmployeeManager {
 private:
     vector<Employee> list;
@@ -110,3 +109,41 @@ public:
                 cout << "=> Xoa thanh cong!\n";
                 return;
             }
+        }
+        cout << "=> Khong tim thay nhan vien!\n";
+    }
+
+    void menu() {
+        while (true) {
+            cout << "\n----- MENU -----\n";
+            cout << "1. Them nhan vien\n";
+            cout << "2. Hien thi danh sach\n";
+            cout << "3. Cap nhat luong\n";
+            cout << "4. Xoa nhan vien\n";
+            cout << "5. Thoat\n";
+            cout << "----------------\n";
+            cout << "Chon chuc nang: ";
+
+            int choice;
+            cin >> choice;
+
+            switch (choice) {
+                case 1: addEmployee(); break;
+                case 2: showAll(); break;
+                case 3: updateSalaryById(); break;
+                case 4: deleteById(); break;
+                case 5:
+                    cout << "Tam Biet!\n";
+                    return;
+                default:
+                    cout << "Lua chon khong hop le! Moi chon lai.\n";
+            }
+        }
+    }
+};
+
+int main() {
+    EmployeeManager manager;
+    manager.menu();
+    return 0;
+}
